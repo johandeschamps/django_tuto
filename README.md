@@ -1,4 +1,6 @@
 # **Tutorial Django**  
+## Exercice d'administration
+
 
 ### Question 1
 In "admin.py" add these codes
@@ -18,7 +20,7 @@ https://github.com/johandeschamps/django_tuto/blob/main/media/Sans%20titre2.png
 
 ### Question 3 
 
-OUI
+Yes
 
 ### Question 4 
 
@@ -28,6 +30,14 @@ OUI
 ```
 admin.site.register(Question, QuestionAdmin)
 ```
+### Question 5 
 
+No
 
+### Question 6
 
+Need to Check box "Statut équipe", password changed
+
+### Question 7
+
+Uncheck box "Actif"
