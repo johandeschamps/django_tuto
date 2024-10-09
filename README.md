@@ -16,8 +16,18 @@ https://github.com/johandeschamps/django_tuto/blob/main/media/Sans%20titre.png
 
 https://github.com/johandeschamps/django_tuto/blob/main/media/Sans%20titre2.png
 
-### Question 3
+### Question 3 
 
+OUI
+
+### Question 4 
+
+1. Add admin class
+2. Add options for admin classes
+3. Save the admin classes like this 
+```
+admin.site.register(Question, QuestionAdmin)
+```
 
 
 
