@@ -111,3 +111,21 @@ choices = question.choice_set.all()
 for choice in choices:
     print(f"    Choice ID: {choice.id}, Choice Text: {choice.choice_text}, Votes: {choice.votes}")
 ````
+
+### Question 5 :
+
+Display the number of choice for each question.
+
+````python
+from polls.models import Question
+questions = Question.objects.all()
+for question in questions:
+    num_choices = question.choice_set.count()
+    print(f"ID: {question.id}, Number of Choices: {num_choices}") 
+ID: 1, Number of Choices: 3
+ID: 2, Number of Choices: 3
+ID: 3, Number of Choices: 3
+ID: 4, Number of Choices: 3
+ID: 5, Number of Choices: 3
+
+````
