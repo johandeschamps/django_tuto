@@ -181,3 +181,17 @@ q.choice_set.create(choice_text="United States of America",votes=0)
 
 ````
 
+### Question 11 :
+
+Question listed recently (last 3 days) 
+
+````python
+from polls.models import Question
+from datetime import datetime, timedelta
+
+date_limit = datetime.now() - timedelta(days=7)
+recent_questions = Question.objects.filter(pub_date__gte=date_limit)
+
+for question in recent_questions:
+    print(f"ID: {question.id}, Question Text: {question.question_text}, Pub Date: {question.pub_date}")
+````
