@@ -78,3 +78,21 @@ for question in question_by_day:
     
 ID: 5, Question Text: What's your favorite car's brand ?, Pub Date: 2024-10-09 07:02:29+00:00
 ````
+
+### Question 3 :
+
+Find seconde question and display attributs 
+
+````python
+from polls.models import Question
+question = Question.objects.get(id=2)
+print(f"ID: {question.id}, Question Text: {question.question_text}, Pub Date: {question.pub_date}")
+````
+
+For display all choice
+````python
+from polls.models import Choice, Question
+q = Question.objects.get(id=2)
+q.choice_set.all()
+<QuerySet [<Choice: Football>, <Choice: Golf>, <Choice: Tennis>]>
+````
