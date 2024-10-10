@@ -46,6 +46,8 @@ Uncheck box "Actif"
 
 ### Question 1 :
 
+Display attributs for each questions
+
 ````python
 from polls.models import Question
 
