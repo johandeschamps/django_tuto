@@ -89,7 +89,7 @@ question = Question.objects.get(id=2)
 print(f"ID: {question.id}, Question Text: {question.question_text}, Pub Date: {question.pub_date}")
 ````
 
-For display all choice
+For display all choices
 ````python
 from polls.models import Choice, Question
 q = Question.objects.get(id=2)
