@@ -59,3 +59,20 @@ ID: 3, Texte: What's your favorite country ?, Date: 2024-10-05 11:55:20+00:00
 ID: 4, Texte: What's your favorite hobbie?, Date: 2024-10-01 06:58:29+00:00
 ID: 5, Texte: What's your favorite car's brand ?, Date: 2024-10-09 07:02:29+00:00
 ``` 
+
+### Question 2 :
+
+Filter by day
+exemple : 09
+
+````python
+from polls.models import Question
+from datetime import datetime
+
+day = 9
+questions_by_day = Question.objects.filter(pub_date__day=day)
+for question in question_by_day:
+    print(f"ID: {question.id}, Question Text: {question.question_text}, Pub Date: {question.pub_date}")
+    
+ID: 5, Question Text: What's your favorite car's brand ?, Pub Date: 2024-10-09 07:02:29+00:00
+````
