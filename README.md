@@ -90,6 +90,7 @@ print(f"ID: {question.id}, Question Text: {question.question_text}, Pub Date: {q
 ````
 
 For display all choices
+
 ````python
 from polls.models import Choice, Question
 q = Question.objects.get(id=2)
@@ -154,4 +155,29 @@ ID: 4, Question Text: What's your favorite hobbie?, Pub Date: 2024-10-01 06:58:2
 
 ...
 
+### Question 9 :
+
+Create question.
+
+````python
+from polls.models import Question
+from django.utils import timezone
+q = Question(question_text="Where is the world's highest bungee jump?", pub_date=timezone.now())
+q.save()
+````
+
+### Question 10 :
+
+Add three choices to the question.
+
+````python
+from polls.models import Choice, Question
+q.choice_set.create(choice_text="China",votes=0)
+<Choice: China>
+q.choice_set.create(choice_text="France",votes=0) 
+<Choice: France>
+q.choice_set.create(choice_text="United States of America",votes=0)
+<Choice: United States of America>
+
+````
 
