@@ -96,3 +96,18 @@ q = Question.objects.get(id=2)
 q.choice_set.all()
 <QuerySet [<Choice: Football>, <Choice: Golf>, <Choice: Tennis>]>
 ````
+
+### Question 4 :
+
+Display attributs and choices of each questions.
+
+````python
+from polls.models import Choice, Question
+questions = Question.objects.all()
+for question in questions:
+    print(f"ID: {question.id}, Texte: {question.question_text}, Date: {question.pub_date}")
+
+choices = question.choice_set.all()
+for choice in choices:
+    print(f"    Choice ID: {choice.id}, Choice Text: {choice.choice_text}, Votes: {choice.votes}")
+````
