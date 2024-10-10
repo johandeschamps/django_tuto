@@ -46,7 +46,7 @@ Uncheck box "Actif"
 
 ### Question 1 :
 
-``` pyhton
+````python
 from polls.models import Question
 
 questions = Question.objects.all()
@@ -58,7 +58,7 @@ ID: 2, Texte: What's your favorite sport ?, Date: 2024-10-08 13:50:27+00:00
 ID: 3, Texte: What's your favorite country ?, Date: 2024-10-05 11:55:20+00:00
 ID: 4, Texte: What's your favorite hobbie?, Date: 2024-10-01 06:58:29+00:00
 ID: 5, Texte: What's your favorite car's brand ?, Date: 2024-10-09 07:02:29+00:00
-``` 
+```` 
 
 ### Question 2 :
 
