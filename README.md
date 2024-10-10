@@ -127,5 +127,31 @@ ID: 2, Number of Choices: 3
 ID: 3, Number of Choices: 3
 ID: 4, Number of Choices: 3
 ID: 5, Number of Choices: 3
-
 ````
+
+### Question 6 :
+
+...
+
+### Question 7 :
+
+Sorted in antechronological order.
+
+````python
+from polls.models import Question
+
+questions = Question.objects.all().order_by('-pub_date')
+for question in questions:
+    print(f"ID: {question.id}, Question Text: {question.question_text}, Pub Date: {question.pub_date}")
+ID: 5, Question Text: What's your favorite car's brand ?, Pub Date: 2024-10-09 07:02:29+00:00
+ID: 2, Question Text: What's your favorite sport ?, Pub Date: 2024-10-08 13:50:27+00:00
+ID: 1, Question Text: What's up?, Pub Date: 2024-10-08 12:18:03+00:00
+ID: 3, Question Text: What's your favorite country ?, Pub Date: 2024-10-05 11:55:20+00:00
+ID: 4, Question Text: What's your favorite hobbie?, Pub Date: 2024-10-01 06:58:29+00:00
+````
+
+### Question 8 :
+
+...
+
+
