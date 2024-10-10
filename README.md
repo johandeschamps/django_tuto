@@ -6,10 +6,10 @@
 In "admin.py" add these codes
 ```
 from .models import Choice
-```
-```
+
 admin.site.register(Choice)
 ```
+
 https://github.com/johandeschamps/django_tuto/blob/main/media/q1.png
 
 ### Question 2
