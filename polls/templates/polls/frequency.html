@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result of poll</title>
+</head>
+<body>
+    <h1>{{ question.question_text }}</h1>
+    <ul>
+        {% for choice in choices %}
+            <li>{{ choice.choice_text }}: {{ choice.votes }} votes ({{ choice.percentage }}%)</li>
+        {% endfor %}
+    </ul>
+    <p>Total des votes: {{ total_votes }}</p>
+</body>
+</html>

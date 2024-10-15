@@ -1,3 +1,4 @@
+from django.db.models import F
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
@@ -49,3 +50,30 @@ def vote(request, question_id):
 def polls_list(request):
     polls = Question.objects.all()
     return render(request, 'polls/all.html', {'polls': polls})
+
+
+def frequency(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
+    choices = question.get_choices()
+    total_votes = sum(choice.votes for choice in choices)
+
+    for choice in choices:
+        choice.percentage = (choice.votes / total_votes) * 100
+
+    context = {
+        'question': question,
+        'choices': choices,
+        'total_votes': total_votes,
+    }
+    return render(request, 'polls/frequency.html', context)
+
+
+class FrequencyView(generic.DetailView):
+    model = Question
+    template_name = 'polls/frequency.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        question = self.object
+        choices = question.choice_set.annotate(vote_count=F('votes'))
+        context['choices'] = choices
+        return context
