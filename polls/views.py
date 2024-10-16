@@ -69,7 +69,11 @@ def frequency(request, question_id):
     total_votes = sum(choice.votes for choice in choices)
 
     for choice in choices:
-        choice.percentage = (choice.votes / total_votes) * 100
+
+        if total_votes > 0:
+            choice.percentage = (choice.votes / total_votes) * 100
+        else:
+            choice.percentage = 0
 
     context = {
         'question': question,
