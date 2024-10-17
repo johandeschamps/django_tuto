@@ -14,6 +14,7 @@
         </li>
     {% endfor %}
     </ul>
+<a href="{% url 'polls:add' %}">Add a question</a>
 {% else %}
     <p>No polls are available.</p>
 {% endif %}

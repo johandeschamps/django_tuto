@@ -6,7 +6,10 @@ from .models import Choice, Question
 class ChoiceInline(admin.TabularInline):
     model = Choice
     extra = 3
-
+class ChoiceAdmin(admin.ModelAdmin):
+    list_display = ('choice_text', 'votes', 'question')
+    search_fields = ('choice_text',)
+    list_filter = ('votes', 'question')
 
 class QuestionAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -18,5 +21,5 @@ class QuestionAdmin(admin.ModelAdmin):
     list_filter = ["pub_date"]
     search_fields = ["question_text"]
 
-
+admin.site.register(Choice, ChoiceAdmin)
 admin.site.register(Question, QuestionAdmin)
